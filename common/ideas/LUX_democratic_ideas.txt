@@ -1,0 +1,90 @@
+ideas = {
+	country = {
+		LUX_banking_law = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				consumer_goods_factor = -0.05
+				stability_factor = 0.05
+			}
+		}
+		LUX_open_door_policy = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.10
+			}
+		}
+		LUX_heavy_industry = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_industrial_complex_factor = 0.10
+			}
+		}
+		LUX_light_industry = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_production_bonus
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		LUX_refugee_integration = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_manpower_bonus
+			modifier = {
+				weekly_manpower = 250
+				stability_factor = 0.05
+			}
+		}
+		LUX_joint_border_patrols = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_infantry_bonus
+			modifier = {
+				army_defense_factor = 0.10
+			}
+		}
+		LUX_coal_and_steel_vision = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.10
+			}
+		}
+		LUX_joint_army = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_infantry_bonus
+			modifier = {
+				army_attack_factor = 0.10
+				army_defense_factor = 0.10
+			}
+		}
+	}
+}

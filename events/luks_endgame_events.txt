@@ -1,0 +1,66 @@
+add_namespace = lux_endgame
+
+# Event for Paris capture
+country_event = {
+	id = lux_endgame.1
+	title = lux_endgame.1.t
+	desc = lux_endgame.1.d
+	picture = GFX_report_event_paris_captured
+	
+	trigger = {
+		tag = LUX
+		has_country_flag = LUX_paris_march_active
+		has_war_with = FRA
+		OR = {
+			30 = { controlled_by = ROOT }
+			controls_province = 9607 # Paris province
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = lux_endgame.1.a
+		white_peace = FRA
+		19 = { transfer_state_to = ROOT }
+		20 = { transfer_state_to = ROOT }
+		21 = { transfer_state_to = ROOT }
+		23 = { transfer_state_to = ROOT }
+		28 = { transfer_state_to = ROOT }
+		clr_country_flag = LUX_paris_march_active
+	}
+}
+
+# Event for Berlin or Frankfurt capture
+country_event = {
+	id = lux_endgame.2
+	title = lux_endgame.2.t
+	desc = lux_endgame.2.d
+	picture = GFX_report_event_german_troops
+	
+	trigger = {
+		tag = LUX
+		has_country_flag = LUX_renanya_operation_active
+		has_war_with = GER
+		OR = {
+			64 = { controlled_by = ROOT } # Brandenburg (Berlin)
+			54 = { controlled_by = ROOT } # Hessen (Frankfurt)
+			controls_province = 3628 # Frankfurt province
+			controls_province = 6455 # Berlin province
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = lux_endgame.2.a
+		white_peace = GER
+		51 = { transfer_state_to = ROOT }
+		52 = { transfer_state_to = ROOT }
+		clr_country_flag = LUX_renanya_operation_active
+	}
+}

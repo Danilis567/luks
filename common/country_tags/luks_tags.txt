@@ -1,0 +1,2 @@
+LMS = "countries/Limousin.txt"
+ATL = "countries/Atlantiques.txt"

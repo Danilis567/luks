@@ -1,0 +1,94 @@
+add_namespace = luxembourg
+
+# Intro Event for Luxembourg in 1936
+country_event = {
+	id = luxembourg.1
+	title = luxembourg.1.t
+	desc = luxembourg.1.d
+	picture = GFX_report_event_industry_gathering
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = luxembourg.1.a
+		add_political_power = 50
+	}
+}
+
+# Referendum Resistance
+country_event = {
+	id = luxembourg.2
+	title = luxembourg.2.t
+	desc = luxembourg.2.d
+	picture = GFX_report_event_political_gathering
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = luxembourg.2.a
+		set_country_flag = LUX_resisted_1937_ban
+		add_political_power = 50
+	}
+}
+
+# Historical Compromise with the Grand Duchess
+country_event = {
+	id = luxembourg.3
+	title = luxembourg.3.t
+	desc = luxembourg.3.d
+	picture = GFX_report_event_political_gathering
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = luxembourg.3.a
+		add_stability = 0.15
+		add_popularity = { ideology = communism popularity = 0.10 }
+	}
+}
+
+# Maulkuerfgesetz Referendum in 1937
+country_event = {
+	id = luxembourg.4
+	title = luxembourg.4.t
+	desc = luxembourg.4.d
+	picture = GFX_report_event_political_gathering
+	
+	trigger = {
+		tag = LUX
+		date > 1937.1.1
+		not = { has_country_flag = LUX_maulkuerfgesetz_fired }
+		not = { ruling_party = communism }
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	immediate = {
+		set_country_flag = LUX_maulkuerfgesetz_fired
+	}
+	
+	option = {
+		name = luxembourg.4.a
+		trigger = {
+			has_country_flag = LUX_resisted_1937_ban
+		}
+		add_stability = 0.05
+		add_popularity = { ideology = communism popularity = 0.05 }
+	}
+	
+	option = {
+		name = luxembourg.4.b
+		trigger = {
+			not = { has_country_flag = LUX_resisted_1937_ban }
+		}
+		add_stability = -0.10
+		set_popularities = {
+			communism = 0
+			democratic = 70
+			neutrality = 28
+			fascism = 2
+		}
+	}
+}

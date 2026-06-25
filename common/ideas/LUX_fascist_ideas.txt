@@ -1,0 +1,138 @@
+ideas = {
+	country = {
+		LUX_yeni_duzenin_safagi_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_fascism_drift_bonus
+			modifier = {
+				fascism_drift = 0.05
+			}
+		}
+		LUX_fasist_iktidar_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				fascism_drift = 0.02
+				stability_factor = 0.05
+			}
+		}
+		LUX_alman_zirhli_destegi_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_production_bonus
+			modifier = {
+				production_speed_railway_factor = 0.15
+			}
+		}
+		LUX_buyuk_luksemburg_ordusu_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_infantry_bonus
+			modifier = {
+				army_attack_factor = 0.25
+				army_defense_factor = 0.10
+			}
+		}
+		LUX_merkez_istihbarat_teskilati_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_intel_bonus
+			modifier = {
+				max_operatives = 2
+			}
+		}
+		LUX_sadik_muttefik_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				political_power_gain = 0.50
+				stability_factor = 0.05
+			}
+		}
+		LUX_hegemonya_ihtirasi_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_intel_bonus
+			modifier = {
+				max_operatives = 1
+			}
+		}
+		LUX_ittifak_ar_ge_agi_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_research_bonus
+			modifier = {
+				research_speed_factor = 0.10
+			}
+		}
+		LUX_ortak_sanayi_uretimi_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.10
+			}
+		}
+		LUX_yabanci_lejyonlar_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_manpower_bonus
+			modifier = {
+				non_core_manpower = 0.15
+			}
+		}
+		LUX_avrupa_manhattan_projesi_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_research_bonus
+			modifier = {
+				research_speed_factor = 0.25
+				production_speed_nuclear_reactor_factor = 0.25
+			}
+		}
+		LUX_fransiz_zayifligi_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_infantry_bonus
+			modifier = {
+				army_attack_factor = 0.15
+			}
+		}
+		LUX_alman_kibri_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_infantry_bonus
+			modifier = {
+				army_attack_factor = 0.15
+			}
+		}
+	}
+}

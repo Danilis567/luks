@@ -1,0 +1,2761 @@
+focus_tree = {
+	id = luxembourg_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = LUX
+		}
+	}
+	default = yes
+	continuous_focus_position = {
+		x = 60
+		y = 10
+	}
+	# SÝYASÝ AÐAÇ
+	focus = {
+		id = LUX_biz_neden_variz
+		icon = GFX_SOV_expand_aviation_institutes_ccp_2d_sov_compatibility
+		x = 11
+		y = 0
+		cost = 10
+		completion_reward = {
+			# Etki: Lüksemburg'un 1936'daki silahsýz, tarafsýz ve çelik zengini durumunu anlatan bir Event tetikler
+			country_event = {
+				id = luxembourg.1
+			}
+		}
+	}
+	focus = {
+		id = LUX_demokrasiyi_koru
+		relative_position_id = LUX_biz_neden_variz
+		x = -5
+		y = 1
+		icon = GFX_focus_generic_social_democracy
+		prerequisite = {
+			focus = LUX_biz_neden_variz
+		}
+		mutually_exclusive = {
+			focus = LUX_buyuk_dusesin_yetkileri
+			focus = LUX_radikallere_goz_yum
+		}
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.15
+			}
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = LUX_buyuk_dusesin_yetkileri
+		relative_position_id = LUX_biz_neden_variz
+		x = 10
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = LUX_biz_neden_variz
+		}
+		mutually_exclusive = {
+			focus = LUX_demokrasiyi_koru
+			focus = LUX_radikallere_goz_yum
+		}
+		cost = 10
+		completion_reward = {
+			set_politics = {
+				ruling_party = neutrality
+			}
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = LUX_radikallere_goz_yum
+		relative_position_id = LUX_biz_neden_variz
+		x = 28
+		y = 1
+		icon = GFX_SOV_carry_revolution_east_ccp_2d_sov_compatibility
+		prerequisite = {
+			focus = LUX_biz_neden_variz
+		}
+		mutually_exclusive = {
+			focus = LUX_demokrasiyi_koru
+			focus = LUX_buyuk_dusesin_yetkileri
+		}
+		cost = 10
+		completion_reward = {
+			add_stability = -0.1
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = LUX_zenon_bernard_devrimi
+		relative_position_id = LUX_radikallere_goz_yum
+		x = -7
+		y = 1
+		icon = GFX_goal_generic_communism
+		prerequisite = {
+			focus = LUX_radikallere_goz_yum
+		}
+		mutually_exclusive = {
+			focus = LUX_volksdeutsche_bewegung
+		}
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+		}
+	}
+	focus = {
+		id = LUX_volksdeutsche_bewegung
+		relative_position_id = LUX_radikallere_goz_yum
+		x = 5
+		y = 1
+		icon = GFX_focus_generic_fascist_propaganda
+		prerequisite = {
+			focus = LUX_radikallere_goz_yum
+		}
+		mutually_exclusive = {
+			focus = LUX_zenon_bernard_devrimi
+		}
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+		}
+	}
+	# --- YENÝ DEMOKRATÝK DAL (YATAY AÐ TASARIMI) ---
+	# SEVÝYE 2: DÖRT ANA DALA AYRILMA
+	focus = {
+		id = LUX_beneluks_diplomasisi
+		relative_position_id = LUX_demokrasiyi_koru
+		x = -5
+		y = 1
+		icon = GFX_SOV_planned_economy_ccp_2d_sov_compatibility
+		prerequisite = {
+			focus = LUX_demokrasiyi_koru
+		}
+		cost = 10
+		completion_reward = {
+			BEL = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = generic_improve_relations
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_arbed_celik_ihracati
+		relative_position_id = LUX_demokrasiyi_koru
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_trade
+		prerequisite = {
+			focus = LUX_demokrasiyi_koru
+		}
+		cost = 10
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = LUX_luksemburg_bankacilik_kanunu
+		relative_position_id = LUX_demokrasiyi_koru
+		x = 2
+		y = 1
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		prerequisite = {
+			focus = LUX_demokrasiyi_koru
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_banking_law
+		}
+	}
+	focus = {
+		id = LUX_avrupanin_siginagi
+		relative_position_id = LUX_demokrasiyi_koru
+		x = 5
+		y = 1
+		icon = GFX_SOV_collectivist_propaganda_ccp_2d_sov_compatibility
+		prerequisite = {
+			focus = LUX_demokrasiyi_koru
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_open_door_policy
+		}
+	}
+	# SEVÝYE 3: ALT DALLAR VE SEÇÝMLER
+	focus = {
+		id = LUX_bruksel_ile_yakinlasma
+		relative_position_id = LUX_beneluks_diplomasisi
+		x = -1
+		y = 1
+		icon = GFX_SOV_collectivist_propaganda_ccp_2d_sov_compatibility
+		prerequisite = {
+			focus = LUX_beneluks_diplomasisi
+		}
+		cost = 10
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = LUX_hollanda_ile_ticari_pakt
+		relative_position_id = LUX_beneluks_diplomasisi
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_trade
+		prerequisite = {
+			focus = LUX_beneluks_diplomasisi
+		}
+		cost = 10
+		completion_reward = {
+			HOL = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = generic_improve_relations
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_agir_sanayi_tesvikleri
+		relative_position_id = LUX_arbed_celik_ihracati
+		x = -1
+		y = 1
+		icon = GFX_focus_generic_industry_3
+		prerequisite = {
+			focus = LUX_arbed_celik_ihracati
+		}
+		mutually_exclusive = {
+			focus = LUX_hafif_sanayi_ve_teknoloji
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_heavy_industry
+		}
+	}
+	focus = {
+		id = LUX_hafif_sanayi_ve_teknoloji
+		relative_position_id = LUX_arbed_celik_ihracati
+		x = 1
+		y = 1
+		icon = GFX_focus_generic_industry_2
+		prerequisite = {
+			focus = LUX_arbed_celik_ihracati
+		}
+		mutually_exclusive = {
+			focus = LUX_agir_sanayi_tesvikleri
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_light_industry
+		}
+	}
+	focus = {
+		id = LUX_serbest_sermaye_dolasimi
+		relative_position_id = LUX_luksemburg_bankacilik_kanunu
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = {
+			focus = LUX_luksemburg_bankacilik_kanunu
+		}
+		cost = 10
+		completion_reward = {
+			add_political_power = 75
+		}
+	}
+	focus = {
+		id = LUX_siyasi_multeci_entegrasyonu
+		relative_position_id = LUX_avrupanin_siginagi
+		x = -1
+		y = 1
+		icon = GFX_SOV_military_reorganization_ccp_2d_sov_compatibility
+		prerequisite = {
+			focus = LUX_avrupanin_siginagi
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_refugee_integration
+		}
+	}
+	focus = {
+		id = LUX_genisletilmis_refah_devleti
+		relative_position_id = LUX_avrupanin_siginagi
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = {
+			focus = LUX_avrupanin_siginagi
+		}
+		cost = 10
+		completion_reward = {
+			add_stability = 0.15
+		}
+	}
+	# SEVÝYE 4: KÖPRÜLER VE BÝRLEÞMELER
+	focus = {
+		id = LUX_ortak_sinir_devriyeleri
+		relative_position_id = LUX_bruksel_ile_yakinlasma
+		x = 1
+		y = 1
+		icon = GFX_focus_CZE_army_reform
+		prerequisite = {
+			focus = LUX_bruksel_ile_yakinlasma
+		}
+		prerequisite = {
+			focus = LUX_hollanda_ile_ticari_pakt
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_joint_border_patrols
+		}
+	}
+	focus = {
+		id = LUX_avrupa_komur_ve_celik_vizyonu
+		relative_position_id = LUX_agir_sanayi_tesvikleri
+		x = 2
+		y = 1
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = {
+			focus = LUX_agir_sanayi_tesvikleri
+			focus = LUX_hafif_sanayi_ve_teknoloji
+		}
+		prerequisite = {
+			focus = LUX_serbest_sermaye_dolasimi
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_coal_and_steel_vision
+		}
+	}
+	focus = {
+		id = LUX_anti_fasist_sivil_savunma
+		relative_position_id = LUX_siyasi_multeci_entegrasyonu
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_propaganda
+		prerequisite = {
+			focus = LUX_siyasi_multeci_entegrasyonu
+		}
+		prerequisite = {
+			focus = LUX_genisletilmis_refah_devleti
+		}
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.15
+			}
+			set_country_flag = LUX_anti_fascist_measures_active
+		}
+	}
+	# SEVÝYE 5: BÜYÜK BÝRLEÞMEYE HAZIRLIK
+	focus = {
+		id = LUX_belcika_luksemburg_ortak_ordusu
+		relative_position_id = LUX_ortak_sinir_devriyeleri
+		x = 0
+		y = 1
+		icon = GFX_focus_PRC_arms_recovery_efforts
+		prerequisite = {
+			focus = LUX_ortak_sinir_devriyeleri
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_joint_army
+		}
+	}
+	focus = {
+		id = LUX_ekonomik_tam_bagimsizlik
+		relative_position_id = LUX_avrupa_komur_ve_celik_vizyonu
+		x = 0
+		y = 1
+		icon = GFX_focus_AFG_a_modern_economy
+		prerequisite = {
+			focus = LUX_avrupa_komur_ve_celik_vizyonu
+		}
+		cost = 10
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = LUX_demokratik_gonullu_milisler
+		relative_position_id = LUX_anti_fasist_sivil_savunma
+		x = 0
+		y = 1
+		icon = GFX_SOV_depoliticize_the_military_ccp_2d_sov_compatibility
+		prerequisite = {
+			focus = LUX_anti_fasist_sivil_savunma
+		}
+		cost = 10
+		completion_reward = {
+			add_manpower = 10000
+		}
+	}
+	# SEVÝYE 6: ANA DALLARIN BÝRLEÞÝMÝ
+	focus = {
+		id = LUX_flemenk_butunlesme_komitesi
+		relative_position_id = LUX_ekonomik_tam_bagimsizlik
+		x = 0
+		y = 1
+		icon = GFX_focus_BEL_belgian_renaissance
+		prerequisite = {
+			focus = LUX_belcika_luksemburg_ortak_ordusu
+		}
+		prerequisite = {
+			focus = LUX_ekonomik_tam_bagimsizlik
+		}
+		prerequisite = {
+			focus = LUX_demokratik_gonullu_milisler
+		}
+		cost = 10
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	# SEVÝYE 7: FÝNAL GENÝÞLEMESÝ (1-2-1-3-1-2 GEOMETRÝSÝ)
+	# SEVÝYE 1: BAÞLANGIÇ (1 Odak - Merkez)
+	focus = {
+		id = LUX_flemenk_cumhuriyetini_ilan_et
+		relative_position_id = LUX_flemenk_butunlesme_komitesi
+		x = 0
+		y = 1
+		icon = GFX_focus_BEL_independent_neutral_and_loyal
+		prerequisite = {
+			focus = LUX_flemenk_butunlesme_komitesi
+		}
+		cost = 10
+		completion_reward = {
+			set_cosmetic_tag = LUX_FLEMISH_REPUBLIC
+			if = {
+				limit = {
+					country_exists = BEL
+				}
+				BEL = {
+					every_owned_state = {
+						add_core_of = LUX
+					}
+					every_unit_leader = {
+						set_nationality = ROOT
+					}
+				}
+				annex_country = {
+					target = BEL
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+	# SEVÝYE 2: ÝKÝLÝ AYRIM (2 Odak - Sol ve Sað)
+	focus = {
+		id = LUX_buyuk_gucleri_yatistirmak
+		relative_position_id = LUX_flemenk_cumhuriyetini_ilan_et
+		x = -2
+		y = 1
+		icon = GFX_focus_ARG_reach_out_to_the_great_powers
+		prerequisite = {
+			focus = LUX_flemenk_cumhuriyetini_ilan_et
+		}
+		cost = 10
+		completion_reward = {
+			GER = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = generic_improve_relations
+				}
+			}
+			FRA = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = generic_improve_relations
+				}
+			}
+			ENG = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = generic_improve_relations
+				}
+			}
+			HOL = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = generic_improve_relations
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_birlesik_flemenk_ordusu
+		relative_position_id = LUX_flemenk_cumhuriyetini_ilan_et
+		x = 2
+		y = 1
+		icon = GFX_focus_AFG_royal_guard
+		prerequisite = {
+			focus = LUX_flemenk_cumhuriyetini_ilan_et
+		}
+		cost = 10
+		completion_reward = {
+			add_manpower = 15000
+			add_equipment_to_stockpile = {
+				type = infantry_weapons
+				amount = 5000
+			}
+		}
+	}
+	# SEVÝYE 3: MÜZAKERE BAÞLANGICI (1 Odak - Merkez)
+	focus = {
+		id = LUX_lahey_muzakereleri
+		relative_position_id = LUX_buyuk_gucleri_yatistirmak
+		x = 2
+		y = 1
+		icon = GFX_focus_hol_oranje_boven
+		prerequisite = {
+			focus = LUX_buyuk_gucleri_yatistirmak
+		}
+		prerequisite = {
+			focus = LUX_birlesik_flemenk_ordusu
+		}
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = LUX_lahey_muzakereleri_tooltip
+		}
+	}
+	# SEVÝYE 4: ÜÇLÜ ÝKNA SÜRECÝ (3 Odak - Sol, Merkez, Sað)
+	focus = {
+		id = LUX_hollanda_ordusuna_garantiler
+		relative_position_id = LUX_lahey_muzakereleri
+		x = -3
+		y = 1
+		icon = GFX_focus_PRC_army_command
+		prerequisite = {
+			focus = LUX_lahey_muzakereleri
+		}
+		cost = 10
+		completion_reward = {
+			set_country_flag = LUX_hollanda_ordusuna_garantiler
+		}
+	}
+	focus = {
+		id = LUX_nassau_hanedanlarini_birlestirmek
+		relative_position_id = LUX_lahey_muzakereleri
+		x = 0
+		y = 1
+		icon = GFX_focus_hol_the_only_man_in_the_dutch_government
+		prerequisite = {
+			focus = LUX_lahey_muzakereleri
+		}
+		cost = 10
+		completion_reward = {
+			set_country_flag = LUX_nassau_hanedanlarini_birlestirmek
+		}
+	}
+	focus = {
+		id = LUX_flemenk_kardesligi_cagrisi
+		relative_position_id = LUX_lahey_muzakereleri
+		x = 3
+		y = 1
+		icon = GFX_focus_PRC_land_revolution_expedited
+		prerequisite = {
+			focus = LUX_lahey_muzakereleri
+		}
+		cost = 10
+		completion_reward = {
+			set_country_flag = LUX_flemenk_kardesligi_cagrisi
+		}
+	}
+	# SEVÝYE 5: BÜYÜK BÝRLEÞME (1 Odak - Merkez)
+	focus = {
+		id = LUX_buyuk_beneluks_ruyasi
+		relative_position_id = LUX_nassau_hanedanlarini_birlestirmek
+		x = 0
+		y = 1
+		icon = GFX_focus_BEL_benelux_union
+		prerequisite = {
+			focus = LUX_hollanda_ordusuna_garantiler
+		}
+		prerequisite = {
+			focus = LUX_nassau_hanedanlarini_birlestirmek
+		}
+		prerequisite = {
+			focus = LUX_flemenk_kardesligi_cagrisi
+		}
+		cost = 10
+		completion_reward = {
+			set_cosmetic_tag = BEN
+			if = {
+				limit = {
+					country_exists = HOL
+				}
+				HOL = {
+					every_owned_state = {
+						add_core_of = LUX
+					}
+					every_unit_leader = {
+						set_nationality = ROOT
+					}
+				}
+				annex_country = {
+					target = HOL
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+	# SEVÝYE 6: FÝNAL ÝNÞAATLARI (2 Odak - Sol ve Sað)
+	focus = {
+		id = LUX_beneluks_altyapi_agi
+		relative_position_id = LUX_buyuk_beneluks_ruyasi
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = {
+			focus = LUX_buyuk_beneluks_ruyasi
+		}
+		cost = 10
+		completion_reward = {
+			every_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_kitanin_celik_kalkani
+		relative_position_id = LUX_buyuk_beneluks_ruyasi
+		x = 2
+		y = 1
+		icon = GFX_focus_BEL_better_than_maginot
+		prerequisite = {
+			focus = LUX_buyuk_beneluks_ruyasi
+		}
+		cost = 10
+		completion_reward = {
+			16 = {
+				add_building_construction = {
+					type = land_fort
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	# --- FAÞÝST DAL ---
+	# SEVÝYE 1: BAÞLANGIÇ (1 Odak - Merkez)
+	focus = {
+		id = LUX_yeni_duzenin_safagi
+		relative_position_id = LUX_volksdeutsche_bewegung
+		x = 0
+		y = 1
+		icon = GFX_goal_support_fascism
+		prerequisite = {
+			focus = LUX_volksdeutsche_bewegung
+		}
+		cost = 10
+		completion_reward = {
+			add_timed_idea = {
+				idea = LUX_yeni_duzenin_safagi_spirit
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = LUX_okullari_fasistlestir
+		relative_position_id = LUX_yeni_duzenin_safagi
+		x = -2
+		y = 1
+		icon = GFX_SOV_military_engineering_university_ccp_2d_sov_compatibility
+		prerequisite = {
+			focus = LUX_yeni_duzenin_safagi
+		}
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = LUX_halki_orgutle
+		relative_position_id = LUX_yeni_duzenin_safagi
+		x = 2
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = LUX_yeni_duzenin_safagi
+		}
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = LUX_orduyu_duzenle
+		relative_position_id = LUX_okullari_fasistlestir
+		x = 0
+		y = 1
+		icon = GFX_focus_GER_expand_ss_security_duties
+		prerequisite = {
+			focus = LUX_okullari_fasistlestir
+		}
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = LUX_sanayiyi_orgutle
+		relative_position_id = LUX_halki_orgutle
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_military_industry
+		prerequisite = {
+			focus = LUX_halki_orgutle
+		}
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = LUX_fasist_iktidar
+		relative_position_id = LUX_orduyu_duzenle
+		x = 2
+		y = 1
+		icon = GFX_focus_AFG_pashtunistan_referendum
+		prerequisite = {
+			focus = LUX_orduyu_duzenle
+		}
+		prerequisite = {
+			focus = LUX_sanayiyi_orgutle
+		}
+		available = {
+			has_popularity = {
+				ideology = fascism
+				value > 0.44
+			}
+		}
+		cost = 10
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_ideas = LUX_fasist_iktidar_spirit
+		}
+	}
+	focus = {
+		id = LUX_fransa_ile_ittifak
+		relative_position_id = LUX_fasist_iktidar
+		x = -2
+		y = 1
+		icon = GFX_focus_chi_reach_out_to_france
+		prerequisite = {
+			focus = LUX_fasist_iktidar
+		}
+		mutually_exclusive = {
+			focus = LUX_almanya_ile_ittifak
+		}
+		cost = 10
+		completion_reward = {
+			add_political_power = 150
+			if = {
+				limit = {
+					country_exists = FRA
+				}
+				FRA = {
+					add_to_faction = LUX
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_almanya_ile_ittifak
+		relative_position_id = LUX_fasist_iktidar
+		x = 2
+		y = 1
+		icon = GFX_focus_chi_mission_to_germany
+		prerequisite = {
+			focus = LUX_fasist_iktidar
+		}
+		mutually_exclusive = {
+			focus = LUX_fransa_ile_ittifak
+		}
+		cost = 10
+		completion_reward = {
+			add_political_power = 150
+			if = {
+				limit = {
+					country_exists = GER
+				}
+				GER = {
+					add_to_faction = LUX
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_fransiz_havacilik_destegi
+		relative_position_id = LUX_fransa_ile_ittifak
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_air_partners
+		prerequisite = {
+			focus = LUX_fransa_ile_ittifak
+		}
+		cost = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = LUX_aviation_support
+				bonus = 1
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = LUX_alman_zirhli_destegi
+		relative_position_id = LUX_almanya_ile_ittifak
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = {
+			focus = LUX_almanya_ile_ittifak
+		}
+		cost = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = LUX_panzer_support
+				bonus = 1
+				uses = 1
+				category = armor
+			}
+			add_ideas = LUX_alman_zirhli_destegi_spirit
+		}
+	}
+	focus = {
+		id = LUX_fransiz_sanayi_yardimi
+		relative_position_id = LUX_fransiz_havacilik_destegi
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = {
+			focus = LUX_fransiz_havacilik_destegi
+		}
+		cost = 10
+		completion_reward = {
+			16 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_alman_sanayi_yatirimlari
+		relative_position_id = LUX_alman_zirhli_destegi
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = {
+			focus = LUX_alman_zirhli_destegi
+		}
+		cost = 10
+		completion_reward = {
+			16 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_buyuk_luksemburg_ordusu
+		relative_position_id = LUX_fransiz_sanayi_yardimi
+		x = 2
+		y = 1
+		icon = GFX_SOV_barrier_troops_ccp_2d_sov_compatibility
+		prerequisite = {
+			focus = LUX_fransiz_sanayi_yardimi
+			focus = LUX_alman_sanayi_yatirimlari
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_buyuk_luksemburg_ordusu_spirit
+		}
+	}
+	focus = {
+		id = LUX_belcika_milliyetcilerini_orgutle
+		relative_position_id = LUX_buyuk_luksemburg_ordusu
+		x = -3
+		y = 1
+		icon = GFX_focus_BEL_junior_officer_training
+		prerequisite = {
+			focus = LUX_buyuk_luksemburg_ordusu
+		}
+		cost = 10
+		completion_reward = {
+			set_country_flag = LUX_organize_belgian_nationalists
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = LUX_merkez_istihbarat_teskilati
+		relative_position_id = LUX_buyuk_luksemburg_ordusu
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_secret_service_agency
+		prerequisite = {
+			focus = LUX_buyuk_luksemburg_ordusu
+		}
+		cost = 10
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				create_intelligence_agency = yes
+			}
+			add_ideas = LUX_merkez_istihbarat_teskilati_spirit
+		}
+	}
+	focus = {
+		id = LUX_hollanda_milliyetcilerini_orgutle
+		relative_position_id = LUX_buyuk_luksemburg_ordusu
+		x = 3
+		y = 1
+		icon = GFX_focus_CHI_tongzi_jun
+		prerequisite = {
+			focus = LUX_buyuk_luksemburg_ordusu
+		}
+		cost = 10
+		completion_reward = {
+			set_country_flag = LUX_organize_dutch_nationalists
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = LUX_belcikaya_silah_sevkiyati
+		relative_position_id = LUX_belcika_milliyetcilerini_orgutle
+		x = 0
+		y = 1
+		icon = GFX_focus_BEL_broken_neutrality
+		prerequisite = {
+			focus = LUX_belcika_milliyetcilerini_orgutle
+		}
+		cost = 10
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_weapons
+				amount = -2500
+			}
+			set_country_flag = LUX_belgian_weapons_sent
+		}
+	}
+	focus = {
+		id = LUX_siyasileri_satil_al
+		relative_position_id = LUX_merkez_istihbarat_teskilati
+		x = 0
+		y = 1
+		icon = GFX_SOV_bring_old_trotskyists_back_ccp_2d_sov_compatibility
+		prerequisite = {
+			focus = LUX_merkez_istihbarat_teskilati
+		}
+		cost = 10
+		completion_reward = {
+			set_country_flag = LUX_bought_politicians
+			add_political_power = -50
+		}
+	}
+	focus = {
+		id = LUX_hollandaya_silah_sevkiyati
+		relative_position_id = LUX_hollanda_milliyetcilerini_orgutle
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_arms_trade
+		prerequisite = {
+			focus = LUX_hollanda_milliyetcilerini_orgutle
+		}
+		cost = 10
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_weapons
+				amount = -2500
+			}
+			set_country_flag = LUX_dutch_weapons_sent
+		}
+	}
+	focus = {
+		id = LUX_belcikada_ayaklanma
+		relative_position_id = LUX_belcikaya_silah_sevkiyati
+		x = 1
+		y = 1
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = {
+			focus = LUX_belcikaya_silah_sevkiyati
+		}
+		prerequisite = {
+			focus = LUX_siyasileri_satil_al
+		}
+		cost = 10
+		completion_reward = {
+			BEL = {
+				start_civil_war = {
+					ideology = fascism
+					size = 0.4
+				}
+			}
+			set_country_flag = LUX_belgian_civil_war_started
+		}
+	}
+	focus = {
+		id = LUX_hollandada_ayaklanma
+		relative_position_id = LUX_hollandaya_silah_sevkiyati
+		x = -1
+		y = 1
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = {
+			focus = LUX_hollandaya_silah_sevkiyati
+		}
+		prerequisite = {
+			focus = LUX_siyasileri_satil_al
+		}
+		cost = 10
+		completion_reward = {
+			HOL = {
+				start_civil_war = {
+					ideology = fascism
+					size = 0.4
+				}
+			}
+			set_country_flag = LUX_dutch_civil_war_started
+		}
+	}
+	focus = {
+		id = LUX_buyuk_fasist_beneluks
+		relative_position_id = LUX_belcikada_ayaklanma
+		x = 2
+		y = 1
+		icon = GFX_focus_BEL_benelux_union
+		prerequisite = {
+			focus = LUX_belcikada_ayaklanma
+		}
+		prerequisite = {
+			focus = LUX_hollandada_ayaklanma
+		}
+		cost = 10
+		completion_reward = {
+			set_cosmetic_tag = LUX_GREAT_FASCIST_BENELUX
+			every_country = {
+				limit = {
+					NOT = {
+						tag = ROOT
+					}
+					OR = {
+						tag = BEL
+						tag = HOL
+						original_tag = BEL
+						original_tag = HOL
+					}
+				}
+				every_owned_state = {
+					add_core_of = ROOT
+				}
+				every_unit_leader = {
+					set_nationality = ROOT
+				}
+				ROOT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_sadik_muttefik
+		relative_position_id = LUX_buyuk_fasist_beneluks
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = {
+			focus = LUX_buyuk_fasist_beneluks
+		}
+		mutually_exclusive = {
+			focus = LUX_hegemonya_ihtirasi
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_sadik_muttefik_spirit
+			every_faction_member = {
+				limit = {
+					NOT = {
+						tag = ROOT
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = generic_improve_relations
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_hegemonya_ihtirasi
+		relative_position_id = LUX_buyuk_fasist_beneluks
+		x = 2
+		y = 1
+		icon = GFX_focus_generic_secret_service_agency
+		prerequisite = {
+			focus = LUX_buyuk_fasist_beneluks
+		}
+		mutually_exclusive = {
+			focus = LUX_sadik_muttefik
+		}
+		cost = 10
+		completion_reward = {
+			add_political_power = 200
+			add_ideas = LUX_hegemonya_ihtirasi_spirit
+		}
+	}
+	focus = {
+		id = LUX_ittifak_ar_ge_agi
+		relative_position_id = LUX_sadik_muttefik
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_scientific_cooperation
+		prerequisite = {
+			focus = LUX_sadik_muttefik
+		}
+		cost = 10
+		completion_reward = {
+			every_faction_member = {
+				add_ideas = LUX_ittifak_ar_ge_agi_spirit
+			}
+		}
+	}
+	focus = {
+		id = LUX_ortak_sanayi_uretimi
+		relative_position_id = LUX_sadik_muttefik
+		x = 1
+		y = 1
+		icon = GFX_focus_generic_military_industry
+		prerequisite = {
+			focus = LUX_sadik_muttefik
+		}
+		cost = 10
+		completion_reward = {
+			every_faction_member = {
+				add_ideas = LUX_ortak_sanayi_uretimi_spirit
+			}
+		}
+	}
+	focus = {
+		id = LUX_yabanci_lejyonlar
+		relative_position_id = LUX_ittifak_ar_ge_agi
+		x = 0
+		y = 1
+		icon = GFX_SOV_barrier_troops_ccp_2d_sov_compatibility
+		prerequisite = {
+			focus = LUX_ittifak_ar_ge_agi
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_yabanci_lejyonlar_spirit
+		}
+	}
+	focus = {
+		id = LUX_muttefik_tedarik_zinciri
+		relative_position_id = LUX_ortak_sanayi_uretimi
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = {
+			focus = LUX_ortak_sanayi_uretimi
+		}
+		cost = 10
+		completion_reward = {
+			every_faction_member = {
+				limit = {
+					NOT = {
+						tag = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			16 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_avrupa_manhattan_projesi
+		relative_position_id = LUX_yabanci_lejyonlar
+		x = 1
+		y = 1
+		icon = GFX_focus_generic_nuclear
+		prerequisite = {
+			focus = LUX_yabanci_lejyonlar
+		}
+		prerequisite = {
+			focus = LUX_muttefik_tedarik_zinciri
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_avrupa_manhattan_projesi_spirit
+		}
+	}
+	focus = {
+		id = LUX_bati_siniri_iddialari
+		relative_position_id = LUX_hegemonya_ihtirasi
+		x = -1
+		y = 1
+		icon = GFX_focus_chi_reach_out_to_france
+		prerequisite = {
+			focus = LUX_hegemonya_ihtirasi
+		}
+		cost = 10
+		completion_reward = {
+			19 = {
+				add_claim_by = ROOT
+			}
+			20 = {
+				add_claim_by = ROOT
+			}
+			21 = {
+				add_claim_by = ROOT
+			}
+			23 = {
+				add_claim_by = ROOT
+			}
+			28 = {
+				add_claim_by = ROOT
+			}
+		}
+	}
+	focus = {
+		id = LUX_dogu_siniri_iddialari
+		relative_position_id = LUX_hegemonya_ihtirasi
+		x = 1
+		y = 1
+		icon = GFX_focus_chi_mission_to_germany
+		prerequisite = {
+			focus = LUX_hegemonya_ihtirasi
+		}
+		cost = 10
+		completion_reward = {
+			51 = {
+				add_claim_by = ROOT
+			}
+			52 = {
+				add_claim_by = ROOT
+			}
+		}
+	}
+	focus = {
+		id = LUX_fransiz_zayifligi
+		relative_position_id = LUX_bati_siniri_iddialari
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_military_industry
+		prerequisite = {
+			focus = LUX_bati_siniri_iddialari
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_fransiz_zayifligi_spirit
+		}
+	}
+	focus = {
+		id = LUX_alman_kibri
+		relative_position_id = LUX_dogu_siniri_iddialari
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = {
+			focus = LUX_dogu_siniri_iddialari
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_alman_kibri_spirit
+		}
+	}
+	focus = {
+		id = LUX_parise_yuruyus
+		relative_position_id = LUX_fransiz_zayifligi
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = LUX_fransiz_zayifligi
+		}
+		cost = 10
+		completion_reward = {
+			set_country_flag = LUX_paris_march_active
+			create_wargoal = {
+				type = annex_everything
+				target = FRA
+			}
+		}
+	}
+	focus = {
+		id = LUX_renanya_operasyonu
+		relative_position_id = LUX_alman_kibri
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = LUX_alman_kibri
+		}
+		cost = 10
+		completion_reward = {
+			set_country_flag = LUX_renanya_operation_active
+			create_wargoal = {
+				type = annex_everything
+				target = GER
+			}
+		}
+	}
+	focus = {
+		id = LUX_lotharingianin_dirilisi
+		relative_position_id = LUX_parise_yuruyus
+		x = 1
+		y = 1
+		icon = GFX_focus_BEL_belgian_renaissance
+		prerequisite = {
+			focus = LUX_parise_yuruyus
+		}
+		prerequisite = {
+			focus = LUX_renanya_operasyonu
+		}
+		cost = 10
+		completion_reward = {
+			set_cosmetic_tag = LUX_LOTHARINGIA
+			19 = {
+				add_core_of = ROOT
+			}
+			20 = {
+				add_core_of = ROOT
+			}
+			21 = {
+				add_core_of = ROOT
+			}
+			23 = {
+				add_core_of = ROOT
+			}
+			28 = {
+				add_core_of = ROOT
+			}
+			51 = {
+				add_core_of = ROOT
+			}
+			52 = {
+				add_core_of = ROOT
+			}
+		}
+	}
+	# --- KOMÜNÝST DAL ---
+	focus = {
+		id = LUX_isci_sinifi_uyaniyor
+		relative_position_id = LUX_zenon_bernard_devrimi
+		x = 0
+		y = 1
+		icon = GFX_goal_support_communism
+		prerequisite = {
+			focus = LUX_zenon_bernard_devrimi
+		}
+		cost = 10
+		completion_reward = {
+			add_timed_idea = {
+				idea = LUX_genel_grev_hazirligi_spirit
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = LUX_sanayi_iscilerini_orgutle
+		relative_position_id = LUX_isci_sinifi_uyaniyor
+		x = -2
+		y = 1
+		icon = GFX_focus_generic_industry_3
+		prerequisite = {
+			focus = LUX_isci_sinifi_uyaniyor
+		}
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = LUX_celik_fabrikalarinda_ajitasyon
+		relative_position_id = LUX_isci_sinifi_uyaniyor
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_industry_2
+		prerequisite = {
+			focus = LUX_isci_sinifi_uyaniyor
+		}
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = LUX_akademiyi_kazan
+		relative_position_id = LUX_isci_sinifi_uyaniyor
+		x = 2
+		y = 1
+		icon = GFX_focus_generic_social_democracy
+		prerequisite = {
+			focus = LUX_isci_sinifi_uyaniyor
+		}
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = LUX_ulke_capinda_genel_grev
+		relative_position_id = LUX_sanayi_iscilerini_orgutle
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_propaganda
+		prerequisite = {
+			focus = LUX_sanayi_iscilerini_orgutle
+		}
+		prerequisite = {
+			focus = LUX_celik_fabrikalarinda_ajitasyon
+		}
+		cost = 10
+		completion_reward = {
+			add_stability = -0.15
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = LUX_37_referandumuna_direnis
+		relative_position_id = LUX_celik_fabrikalarinda_ajitasyon
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = LUX_celik_fabrikalarinda_ajitasyon
+		}
+		prerequisite = {
+			focus = LUX_akademiyi_kazan
+		}
+		cost = 10
+		completion_reward = {
+			add_political_power = 100
+			country_event = {
+				id = luxembourg.2
+			}
+		}
+	}
+	focus = {
+		id = LUX_sokak_gosterileri
+		relative_position_id = LUX_ulke_capinda_genel_grev
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_propaganda
+		prerequisite = {
+			focus = LUX_ulke_capinda_genel_grev
+		}
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.05
+			}
+		}
+	}
+	focus = {
+		id = LUX_mecliste_siyasi_baski
+		relative_position_id = LUX_ulke_capinda_genel_grev
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = LUX_ulke_capinda_genel_grev
+			focus = LUX_37_referandumuna_direnis
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_meclis_baskisi_spirit
+		}
+	}
+	focus = {
+		id = LUX_alt_rutbeli_subaylari_kazan
+		relative_position_id = LUX_37_referandumuna_direnis
+		x = 1
+		y = 1
+		icon = GFX_goal_support_communism
+		prerequisite = {
+			focus = LUX_37_referandumuna_direnis
+		}
+		cost = 10
+		completion_reward = {
+			army_experience = 10
+			add_ideas = LUX_ordu_destegi_spirit
+		}
+	}
+	focus = {
+		id = LUX_buyuk_duses_ile_tarihi_uzlasma
+		relative_position_id = LUX_sokak_gosterileri
+		x = 1
+		y = 1
+		icon = GFX_focus_generic_social_democracy
+		prerequisite = {
+			focus = LUX_sokak_gosterileri
+		}
+		prerequisite = {
+			focus = LUX_mecliste_siyasi_baski
+		}
+		prerequisite = {
+			focus = LUX_alt_rutbeli_subaylari_kazan
+		}
+		mutually_exclusive = {
+			focus = LUX_kraliyet_ailesini_lagvet
+		}
+		cost = 10
+		completion_reward = {
+			country_event = {
+				id = luxembourg.3
+			}
+		}
+	}
+	focus = {
+		id = LUX_kraliyet_ailesini_lagvet
+		relative_position_id = LUX_sokak_gosterileri
+		x = 3
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = LUX_sokak_gosterileri
+		}
+		prerequisite = {
+			focus = LUX_mecliste_siyasi_baski
+		}
+		prerequisite = {
+			focus = LUX_alt_rutbeli_subaylari_kazan
+		}
+		mutually_exclusive = {
+			focus = LUX_buyuk_duses_ile_tarihi_uzlasma
+		}
+		cost = 10
+		completion_reward = {
+			add_stability = -0.6
+			add_political_power = 300
+		}
+	}
+	focus = {
+		id = LUX_luksemburg_isci_cumhuriyeti
+		relative_position_id = LUX_buyuk_duses_ile_tarihi_uzlasma
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_communism
+		prerequisite = {
+			focus = LUX_buyuk_duses_ile_tarihi_uzlasma
+			focus = LUX_kraliyet_ailesini_lagvet
+		}
+		cost = 10
+		completion_reward = {
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			create_country_leader = {
+				name = "Zenon Bernard"
+				desc = "POLITICS_ZENON_BERNARD_DESC"
+				picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+				expire = "1965.1.1"
+				ideology = marxism
+			}
+		}
+	}
+	focus = {
+		id = LUX_sovyet_ittifakina_katil
+		relative_position_id = LUX_luksemburg_isci_cumhuriyeti
+		x = -3
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = LUX_luksemburg_isci_cumhuriyeti
+		}
+		mutually_exclusive = {
+			focus = LUX_benelukste_isci_demokrasisi
+		}
+		cost = 10
+		completion_reward = {
+			SOV = {
+				add_to_faction = ROOT
+			}
+		}
+	}
+	focus = {
+		id = LUX_sovyetlere_ticaret_imtiyazlari
+		relative_position_id = LUX_sovyet_ittifakina_katil
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_trade
+		prerequisite = {
+			focus = LUX_sovyet_ittifakina_katil
+		}
+		cost = 10
+		completion_reward = {
+			SOV = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = generic_improve_relations
+				}
+			}
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = LUX_kizil_celik_ihracati
+		relative_position_id = LUX_sovyet_ittifakina_katil
+		x = 1
+		y = 1
+		icon = GFX_focus_generic_industry_3
+		prerequisite = {
+			focus = LUX_sovyet_ittifakina_katil
+		}
+		cost = 10
+		completion_reward = {
+			16 = {
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+			}
+			SOV = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = generic_improve_relations
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_sovyet_gocmenleri
+		relative_position_id = LUX_sovyetlere_ticaret_imtiyazlari
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = {
+			focus = LUX_sovyetlere_ticaret_imtiyazlari
+		}
+		cost = 10
+		completion_reward = {
+			add_manpower = 20000
+			add_ideas = LUX_sovyet_gocmenleri_spirit
+		}
+	}
+	focus = {
+		id = LUX_sovyet_sanayi_entegrasyonu
+		relative_position_id = LUX_kizil_celik_ihracati
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_industry_2
+		prerequisite = {
+			focus = LUX_kizil_celik_ihracati
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_sovyet_sanayi_spirit
+		}
+	}
+	focus = {
+		id = LUX_kizil_ordu_danismanlari
+		relative_position_id = LUX_sovyet_gocmenleri
+		x = 0
+		y = 1
+		icon = GFX_goal_support_communism
+		prerequisite = {
+			focus = LUX_sovyet_gocmenleri
+		}
+		cost = 10
+		completion_reward = {
+			create_corps_commander = {
+				name = "Mikhail Kirponos"
+				portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+				traits = {
+					infantry_officer
+					organizer
+				}
+				skill = 3
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "Vasily Chuikov"
+				portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
+				traits = {
+					urban_assault_specialist
+					trickster
+				}
+				skill = 4
+				attack_skill = 3
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 2
+			}
+		}
+	}
+	focus = {
+		id = LUX_sovyet_garnizonu
+		relative_position_id = LUX_sovyet_sanayi_entegrasyonu
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_industry_3
+		prerequisite = {
+			focus = LUX_sovyet_sanayi_entegrasyonu
+		}
+		cost = 10
+		completion_reward = {
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = "
+					Soviet
+					Garrison
+					" division_template = "
+					Infantry
+					Division
+					" start_experience_factor = 0.3"
+					owner = ROOT
+					count = 4
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_halki_baskila
+		relative_position_id = LUX_kizil_ordu_danismanlari
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = LUX_kizil_ordu_danismanlari
+		}
+		prerequisite = {
+			focus = LUX_sovyet_garnizonu
+		}
+		cost = 10
+		completion_reward = {
+			add_stability = 0.2
+			SOV = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_puppet
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_benelukste_isci_demokrasisi
+		relative_position_id = LUX_luksemburg_isci_cumhuriyeti
+		x = 2
+		y = 1
+		icon = GFX_goal_support_communism
+		prerequisite = {
+			focus = LUX_luksemburg_isci_cumhuriyeti
+		}
+		mutually_exclusive = {
+			focus = LUX_sovyet_ittifakina_katil
+		}
+		cost = 10
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = LUX_calisma_saatlerini_kisalt
+		relative_position_id = LUX_benelukste_isci_demokrasisi
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = {
+			focus = LUX_benelukste_isci_demokrasisi
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_kisaltilmis_calisma_saatleri_spirit
+		}
+	}
+	focus = {
+		id = LUX_yan_haklari_gelistir
+		relative_position_id = LUX_benelukste_isci_demokrasisi
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = LUX_benelukste_isci_demokrasisi
+		}
+		cost = 10
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = LUX_egitim_temel_haktir
+		relative_position_id = LUX_benelukste_isci_demokrasisi
+		x = 2
+		y = 1
+		icon = GFX_focus_generic_social_democracy
+		prerequisite = {
+			focus = LUX_benelukste_isci_demokrasisi
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_egitim_bursu_spirit
+		}
+	}
+	focus = {
+		id = LUX_komunist_kongre
+		relative_position_id = LUX_calisma_saatlerini_kisalt
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_propaganda
+		prerequisite = {
+			focus = LUX_calisma_saatlerini_kisalt
+		}
+		cost = 10
+		completion_reward = {
+			BEL = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.1
+				}
+			}
+			HOL = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.1
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_akademiler_arasi_siyasi_baglar
+		relative_position_id = LUX_yan_haklari_gelistir
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_social_democracy
+		prerequisite = {
+			focus = LUX_yan_haklari_gelistir
+		}
+		cost = 10
+		completion_reward = {
+			BEL = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.05
+				}
+			}
+			HOL = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.05
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_ordudaki_anti_komunistleri_sisle
+		relative_position_id = LUX_egitim_temel_haktir
+		x = 0
+		y = 1
+		icon = GFX_goal_support_communism
+		prerequisite = {
+			focus = LUX_egitim_temel_haktir
+		}
+		cost = 10
+		completion_reward = {
+			BEL = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.1
+				}
+			}
+			HOL = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.1
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_belcika_komunist_protestolari
+		relative_position_id = LUX_komunist_kongre
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_propaganda
+		prerequisite = {
+			focus = LUX_komunist_kongre
+		}
+		prerequisite = {
+			focus = LUX_akademiler_arasi_siyasi_baglar
+		}
+		cost = 10
+		completion_reward = {
+			BEL = {
+				add_stability = -0.3
+			}
+		}
+	}
+	focus = {
+		id = LUX_hollanda_kraliyet_karsiti_gosteriler
+		relative_position_id = LUX_akademiler_arasi_siyasi_baglar
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_propaganda
+		prerequisite = {
+			focus = LUX_akademiler_arasi_siyasi_baglar
+		}
+		prerequisite = {
+			focus = LUX_ordudaki_anti_komunistleri_sisle
+		}
+		cost = 10
+		completion_reward = {
+			HOL = {
+				add_stability = -0.3
+			}
+		}
+	}
+	focus = {
+		id = LUX_belcika_meclisini_yak
+		relative_position_id = LUX_belcika_komunist_protestolari
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = LUX_belcika_komunist_protestolari
+		}
+		cost = 10
+		completion_reward = {
+			BEL = {
+				add_political_power = -150
+				add_stability = -0.2
+			}
+		}
+	}
+	focus = {
+		id = LUX_kolonileri_bagimsizlastir
+		relative_position_id = LUX_hollanda_kraliyet_karsiti_gosteriler
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = LUX_hollanda_kraliyet_karsiti_gosteriler
+		}
+		cost = 10
+		completion_reward = {
+			HOL = {
+				add_stability = -0.2
+			}
+			if = {
+				limit = {
+					country_exists = INS
+				}
+				INS = {
+					set_autonomy = {
+						target = HOL
+						autonomous_state = autonomy_free
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_belcika_isci_devrimi
+		relative_position_id = LUX_belcika_meclisini_yak
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_communism
+		prerequisite = {
+			focus = LUX_belcika_meclisini_yak
+		}
+		cost = 10
+		completion_reward = {
+			BEL = {
+				start_civil_war = {
+					ideology = communism
+					size = 0.5
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_hollanda_isci_devrimi
+		relative_position_id = LUX_kolonileri_bagimsizlastir
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_communism
+		prerequisite = {
+			focus = LUX_kolonileri_bagimsizlastir
+		}
+		cost = 10
+		completion_reward = {
+			HOL = {
+				start_civil_war = {
+					ideology = communism
+					size = 0.5
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_kizil_beneluks_pakti
+		relative_position_id = LUX_belcika_isci_devrimi
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = LUX_belcika_isci_devrimi
+		}
+		prerequisite = {
+			focus = LUX_hollanda_isci_devrimi
+		}
+		available = {
+			BEL = {
+				has_government = communism
+			}
+			HOL = {
+				has_government = communism
+			}
+		}
+		cost = 10
+		completion_reward = {
+			create_faction = "Red Benelux Pact"
+			every_country = {
+				limit = {
+					NOT = {
+						tag = ROOT
+					}
+					has_government = communism
+					OR = {
+						tag = BEL
+						tag = HOL
+						original_tag = BEL
+						original_tag = HOL
+					}
+				}
+				add_to_faction = ROOT
+			}
+		}
+	}
+	focus = {
+		id = LUX_bagimsiz_isci_cumhuriyetleri
+		relative_position_id = LUX_kizil_beneluks_pakti
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = LUX_kizil_beneluks_pakti
+		}
+		mutually_exclusive = {
+			focus = LUX_beneluks_komunler_birligi
+		}
+		cost = 10
+		completion_reward = {
+			every_faction_member = {
+				add_ideas = LUX_kizil_pakt_spirit
+			}
+		}
+	}
+	focus = {
+		id = LUX_beneluks_komunler_birligi
+		relative_position_id = LUX_kizil_beneluks_pakti
+		x = 2
+		y = 1
+		icon = GFX_goal_generic_communism
+		prerequisite = {
+			focus = LUX_kizil_beneluks_pakti
+		}
+		mutually_exclusive = {
+			focus = LUX_bagimsiz_isci_cumhuriyetleri
+		}
+		cost = 10
+		completion_reward = {
+			every_country = {
+				limit = {
+					NOT = {
+						tag = ROOT
+					}
+					OR = {
+						tag = BEL
+						tag = HOL
+						original_tag = BEL
+						original_tag = HOL
+					}
+				}
+				every_owned_state = {
+					add_core_of = ROOT
+				}
+				every_unit_leader = {
+					set_nationality = ROOT
+				}
+				ROOT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_devrimin_meyveleri
+		relative_position_id = LUX_kizil_beneluks_pakti
+		x = 0
+		y = 2
+		icon = GFX_goal_generic_propaganda
+		prerequisite = {
+			focus = LUX_bagimsiz_isci_cumhuriyetleri
+			focus = LUX_beneluks_komunler_birligi
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_devrimin_meyveleri_spirit
+		}
+	}
+	# TURUNCU YOL: KIZIL KALE
+	focus = {
+		id = LUX_gecilemez_luksemburg
+		relative_position_id = LUX_devrimin_meyveleri
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_fortify_civic
+		prerequisite = {
+			focus = LUX_devrimin_meyveleri
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_kizil_taarruz
+		}
+		mutually_exclusive = {
+			focus = LUX_gecilemez_luksemburg
+		}
+	}
+	focus = {
+		id = LUX_anavatan_savunmasi
+		relative_position_id = LUX_gecilemez_luksemburg
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_national_defense
+		prerequisite = {
+			focus = LUX_gecilemez_luksemburg
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_anavatan_savunmasi_spirit
+		}
+	}
+	focus = {
+		id = LUX_taktiksel_karsi_taarruz
+		relative_position_id = LUX_gecilemez_luksemburg
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = {
+			focus = LUX_gecilemez_luksemburg
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_taktiksel_karsi_taarruz_spirit
+		}
+	}
+	focus = {
+		id = LUX_bati_duvari
+		relative_position_id = LUX_anavatan_savunmasi
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_fortify_border
+		prerequisite = {
+			focus = LUX_anavatan_savunmasi
+		}
+		cost = 10
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					any_neighbor_state = {
+						controlled_by = FRA
+					}
+				}
+				add_building_construction = {
+					type = land_fort
+					level = 10
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_dogu_duvari
+		relative_position_id = LUX_taktiksel_karsi_taarruz
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_fortify_border
+		prerequisite = {
+			focus = LUX_taktiksel_karsi_taarruz
+		}
+		cost = 10
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					any_neighbor_state = {
+						controlled_by = GER
+					}
+				}
+				add_building_construction = {
+					type = land_fort
+					level = 10
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_rotterdam_sentetik_tesisleri
+		relative_position_id = LUX_bati_duvari
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_refinery
+		prerequisite = {
+			focus = LUX_bati_duvari
+		}
+		cost = 10
+		completion_reward = {
+			6 = {
+				add_resource = {
+					type = oil
+					amount = 24
+				}
+				add_resource = {
+					type = rubber
+					amount = 24
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_beneluks_madenleri
+		relative_position_id = LUX_dogu_duvari
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_production
+		prerequisite = {
+			focus = LUX_dogu_duvari
+		}
+		cost = 10
+		completion_reward = {
+			16 = {
+				add_resource = {
+					type = chromium
+					amount = 24
+				}
+				add_resource = {
+					type = steel
+					amount = 24
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_son_nefese_kadar
+		relative_position_id = LUX_rotterdam_sentetik_tesisleri
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = LUX_rotterdam_sentetik_tesisleri
+		}
+		prerequisite = {
+			focus = LUX_beneluks_madenleri
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_son_nefese_kadar_spirit
+		}
+	}
+	# MAVİ YOL: AVRUPA DEVRİMİ
+	focus = {
+		id = LUX_kizil_taarruz
+		relative_position_id = LUX_devrimin_meyveleri
+		x = 3
+		y = 1
+		icon = GFX_goal_generic_military_deal
+		prerequisite = {
+			focus = LUX_devrimin_meyveleri
+		}
+		mutually_exclusive = {
+			focus = LUX_gecilemez_luksemburg
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_kizil_taarruz_spirit
+		}
+	}
+	focus = {
+		id = LUX_hizlandirilmis_askeri_insaat
+		relative_position_id = LUX_kizil_taarruz
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_construct_mil
+		prerequisite = {
+			focus = LUX_kizil_taarruz
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_hizlandirilmis_askeri_insaat_spirit
+		}
+	}
+	focus = {
+		id = LUX_seri_silah_uretimi
+		relative_position_id = LUX_kizil_taarruz
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_production
+		prerequisite = {
+			focus = LUX_kizil_taarruz
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_seri_silah_uretimi_spirit
+		}
+	}
+	focus = {
+		id = LUX_kizil_zirhlilar
+		relative_position_id = LUX_kizil_taarruz
+		x = 2
+		y = 1
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = {
+			focus = LUX_kizil_taarruz
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_kizil_zirhlilar_spirit
+		}
+	}
+	focus = {
+		id = LUX_maksimum_verimlilik
+		relative_position_id = LUX_seri_silah_uretimi
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_industrial_planning
+		prerequisite = {
+			focus = LUX_hizlandirilmis_askeri_insaat
+			focus = LUX_seri_silah_uretimi
+			focus = LUX_kizil_zirhlilar
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = LUX_maksimum_verimlilik_spirit
+		}
+	}
+	focus = {
+		id = LUX_topyekun_savas_ekonomisi
+		relative_position_id = LUX_seri_silah_uretimi
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_war_planning
+		prerequisite = {
+			focus = LUX_hizlandirilmis_askeri_insaat
+			focus = LUX_seri_silah_uretimi
+			focus = LUX_kizil_zirhlilar
+		}
+		cost = 10
+		completion_reward = {
+			add_ideas = war_economy
+			add_ideas = closed_economy
+		}
+	}
+	focus = {
+		id = LUX_aluminyum_kamulastirmasi
+		relative_position_id = LUX_maksimum_verimlilik
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_resources
+		prerequisite = {
+			focus = LUX_maksimum_verimlilik
+		}
+		cost = 10
+		completion_reward = {
+			16 = {
+				add_resource = {
+					type = aluminium
+					amount = 40
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_stratejik_kaynak_el_konmasi
+		relative_position_id = LUX_topyekun_savas_ekonomisi
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_resources
+		prerequisite = {
+			focus = LUX_topyekun_savas_ekonomisi
+		}
+		cost = 10
+		completion_reward = {
+			16 = {
+				add_resource = {
+					type = oil
+					amount = 23
+				}
+				add_resource = {
+					type = rubber
+					amount = 30
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_fransiz_komunistlerini_fonla
+		relative_position_id = LUX_aluminyum_kamulastirmasi
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_spy_fund
+		prerequisite = {
+			focus = LUX_aluminyum_kamulastirmasi
+		}
+		cost = 10
+		completion_reward = {
+			FRA = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+				add_stability = -0.15
+				add_timed_idea = {
+					idea = LUX_fonlanan_komunizm
+					days = 365
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_alman_komunistlerini_fonla
+		relative_position_id = LUX_stratejik_kaynak_el_konmasi
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_spy_fund
+		prerequisite = {
+			focus = LUX_stratejik_kaynak_el_konmasi
+		}
+		cost = 10
+		completion_reward = {
+			GER = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+				add_stability = -0.15
+				add_timed_idea = {
+					idea = LUX_fonlanan_komunizm
+					days = 365
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_fransiz_iscilerini_kiskirt
+		relative_position_id = LUX_fransiz_komunistlerini_fonla
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_propaganda
+		prerequisite = {
+			focus = LUX_fransiz_komunistlerini_fonla
+		}
+		cost = 10
+		completion_reward = {
+			FRA = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+				add_timed_idea = {
+					idea = LUX_kiskirtilan_isciler
+					days = 365
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_alman_iscilerini_kiskirt
+		relative_position_id = LUX_alman_komunistlerini_fonla
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_propaganda
+		prerequisite = {
+			focus = LUX_alman_komunistlerini_fonla
+		}
+		cost = 10
+		completion_reward = {
+			GER = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+				add_timed_idea = {
+					idea = LUX_kiskirtilan_isciler
+					days = 365
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_fransanin_parcalanmasi
+		relative_position_id = LUX_fransiz_iscilerini_kiskirt
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = {
+			focus = LUX_fransiz_iscilerini_kiskirt
+		}
+		cost = 10
+		completion_reward = {
+			FRA = {
+				start_civil_war = {
+					ideology = communism
+					size = 0.5
+				}
+			}
+			17 = {
+				add_core_of = BRI
+			}
+			20 = {
+				add_core_of = LMS
+			}
+			179 = {
+				add_core_of = ATL
+			}
+			FRA = {
+				release = BRI
+				release = LMS
+				release = ATL
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = BRI
+						tag = LMS
+						tag = ATL
+					}
+				}
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				declare_war_on = {
+					target = FRA
+					type = war_reason_liberation
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_almanya_nin_parcalanmasi
+		relative_position_id = LUX_alman_iscilerini_kiskirt
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = {
+			focus = LUX_alman_iscilerini_kiskirt
+		}
+		cost = 10
+		completion_reward = {
+			GER = {
+				start_civil_war = {
+					ideology = communism
+					size = 0.5
+				}
+			}
+			GER = {
+				release = RHI
+				release = WET
+				release = BAY
+				release = HES
+				release = SAX
+				release = SIL
+				release = KSH
+				release = PRE
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = RHI
+						tag = WET
+						tag = BAY
+						tag = HES
+						tag = SAX
+						tag = SIL
+						tag = KSH
+						tag = PRE
+					}
+				}
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				declare_war_on = {
+					target = GER
+					type = war_reason_liberation
+				}
+			}
+		}
+	}
+	focus = {
+		id = LUX_kizil_avrupa_pakti
+		relative_position_id = LUX_fransanin_parcalanmasi
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_alliance
+		prerequisite = {
+			focus = LUX_fransanin_parcalanmasi
+		}
+		prerequisite = {
+			focus = LUX_almanya_nin_parcalanmasi
+		}
+		cost = 10
+		completion_reward = {
+			create_faction = "Kizil_Avrupa_Pakti"
+			every_country = {
+				limit = {
+					OR = {
+						tag = FRA
+						tag = GER
+						tag = BRI
+						tag = LMS
+						tag = ATL
+						tag = RHI
+						tag = WET
+						tag = BAY
+						tag = HES
+						tag = SAX
+						tag = SIL
+						tag = KSH
+						tag = PRE
+					}
+					has_government = communism
+				}
+				leave_faction = yes
+				add_to_faction = ROOT
+			}
+		}
+	}
+	focus = {
+		id = LUX_avrupa_komunler_birligi
+		relative_position_id = LUX_kizil_avrupa_pakti
+		x = 0
+		y = 1
+		icon = GFX_focus_BEL_benelux_union
+		prerequisite = {
+			focus = LUX_kizil_avrupa_pakti
+		}
+		cost = 10
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = FRA
+						tag = GER
+						tag = BRI
+						tag = LMS
+						tag = ATL
+						tag = RHI
+						tag = WET
+						tag = BAY
+						tag = HES
+						tag = SAX
+						tag = SIL
+						tag = KSH
+						tag = PRE
+					}
+					is_in_faction_with = ROOT
+				}
+				every_owned_state = {
+					add_core_of = ROOT
+				}
+				every_unit_leader = {
+					set_nationality = ROOT
+				}
+				ROOT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+		}
+	}
+}

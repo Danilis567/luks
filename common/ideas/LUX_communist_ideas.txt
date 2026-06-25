@@ -1,0 +1,179 @@
+ideas = {
+	country = {
+		LUX_genel_grev_hazirligi_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				communism_drift = 0.05
+				stability_factor = -0.10
+				consumer_goods_factor = 0.05
+			}
+		}
+		LUX_meclis_baskisi_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.05
+			}
+		}
+		LUX_ordu_destegi_spirit = {
+			allowed = {
+				always = yes
+			}
+			allowed_to_remove = no
+			picture = generic_infantry_bonus
+			modifier = {
+				army_attack_factor = 0.05
+				army_defense_factor = 0.05
+			}
+		}
+		LUX_sovyet_gocmenleri_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				recruitable_population = 0.05
+				stability_factor = -0.20
+			}
+		}
+		LUX_sovyet_sanayi_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				industrial_capacity_factory = 0.05
+			}
+		}
+		LUX_kisaltilmis_calisma_saatleri_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		LUX_egitim_bursu_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+		LUX_kizil_pakt_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_infantry_bonus
+			modifier = {
+				army_attack_factor = 0.10
+				army_defense_factor = 0.10
+			}
+		}
+		LUX_devrimin_meyveleri_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.15
+				research_speed_factor = 0.05
+				army_attack_factor = 0.10
+				army_defense_factor = 0.10
+			}
+		}
+		LUX_gecilemez_luksemburg_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				production_speed_land_fort_factor = 0.20
+				production_speed_infrastructure_factor = 0.20
+			}
+		}
+		LUX_anavatan_savunmasi_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_infantry_bonus
+			modifier = {
+				defense_on_core = 0.50
+			}
+		}
+		LUX_taktiksel_karsi_taarruz_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_infantry_bonus
+			modifier = {
+				army_attack_factor = 0.20
+			}
+		}
+		LUX_son_nefese_kadar_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				surrender_limit = 0.75
+			}
+		}
+		LUX_kizil_taarruz_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_infantry_bonus
+			modifier = {
+				army_attack_factor = 0.25
+			}
+		}
+		LUX_hizlandirilmis_askeri_insaat_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				production_speed_arms_factory_factor = 0.20
+			}
+		}
+		LUX_seri_silah_uretimi_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				infantry_equipment_production_cost_factor = -0.15
+			}
+		}
+		LUX_kizil_zirhlilar_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				medium_tank_production_cost_factor = -0.15
+			}
+		}
+		LUX_maksimum_verimlilik_spirit = {
+			allowed = { always = yes }
+			allowed_to_remove = no
+			picture = generic_political_influence
+			modifier = {
+				industrial_capacity_factory = 0.15
+			}
+		}
+		LUX_fonlanan_komunizm = {
+			allowed = { always = yes }
+			picture = generic_political_influence
+			modifier = {
+				communism_drift = 0.05
+			}
+		}
+		LUX_kiskirtilan_isciler = {
+			allowed = { always = yes }
+			picture = generic_political_influence
+			modifier = {
+				consumer_goods_factor = 0.10
+			}
+		}
+	}
+}
